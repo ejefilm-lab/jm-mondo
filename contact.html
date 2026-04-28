@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — 제이엠몬도 (JM Mondo)</title>
-  <meta name="description" content="제이엠몬도에 프로젝트 문의를 남겨주세요." />
+  <meta name="description" content="제이엠몬도 스튜디오 방문 안내 — 위치, 운영 시간, 연락 방법." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet" />
@@ -18,6 +18,7 @@
       <nav>
         <ul class="nav-list">
           <li><a href="about.html">ABOUT</a><ul class="submenu"><li><a href="about.html#company">COMPANY</a></li><li><a href="about.html#ceo-message">CEO MESSAGE</a></li><li><a href="about.html#promise">PROMISE</a></li></ul></li>
+          <li><a href="business.html">BUSINESS</a><ul class="submenu"><li><a href="business.html#interior">INTERIOR</a></li><li><a href="business.html#construction">CONSTRUCTION</a></li></ul></li>
           <li><a href="project.html">PROJECT</a></li>
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="reservation.html">RESERVATION</a></li>
@@ -44,22 +45,87 @@
   <section class="page-hero">
     <div class="container-narrow">
       <span class="eyebrow reveal">Contact</span>
-      <h1 class="h-display reveal">Let's Talk</h1>
-      <p class="body-en reveal"><em>Tell us about your space. We'll be in touch shortly.</em></p>
+      <h1 class="h-display reveal">Visit the Studio</h1>
+      <p class="body-en reveal"><em>Drop by — we'd love to show you around.</em></p>
     </div>
   </section>
 
   <section>
     <div class="container-narrow">
+      <p class="body-kr reveal" style="text-align:center; max-width:50ch; margin:0 auto;">
+        도면과 머티리얼 보드, 그리고 지난 작업의 사진을 함께 펼쳐 놓고 이야기 나누는 자리입니다. 가벼운 마음으로 오셔서, 어떤 공간을 그리고 계시는지 들려주세요.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="contact-info" style="border-top:1px solid var(--line); padding-top:3rem; margin-top:0;">
+        <div class="contact-info-item reveal">
+          <div class="label">Address</div>
+          <div class="value"><em>Seoul, KR</em></div>
+          <div class="value-sub">서울시 ○○구 ○○로 ○○<br/>(상세 주소)</div>
+        </div>
+        <div class="contact-info-item reveal">
+          <div class="label">Hours</div>
+          <div class="value"><em>Mon — Fri</em></div>
+          <div class="value-sub">10:00 — 18:00<br/>주말・공휴일 휴무</div>
+        </div>
+        <div class="contact-info-item reveal">
+          <div class="label">Reach</div>
+          <div class="value"><em>02 . 0000 . 0000</em></div>
+          <div class="value-sub">
+            <a href="mailto:hello@example.com">hello@example.com</a><br/>
+            <a href="http://pf.kakao.com/" target="_blank" rel="noopener">카카오톡 채널</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg-alt);">
+    <div class="container-narrow">
+      <div class="section-head">
+        <span class="eyebrow reveal">Visit Booking</span>
+        <h2 class="h-section reveal"><em>Schedule a Visit</em></h2>
+        <p class="body-kr reveal" style="max-width:48ch; margin:1rem auto 0;">
+          편하신 시간을 직접 잡으실 수 있습니다. 캘린더에서 원하는 시간을 선택해 주세요.
+        </p>
+      </div>
+
       <!--
         ╔══════════════════════════════════════════════════════════════════════
-        ║  FORMSPREE 연동:
-        ║  1. https://formspree.io 가입 후 새 form 생성
-        ║  2. 받은 endpoint URL을 아래 form action 에 붙여넣기
-        ║     예) action="https://formspree.io/f/xyzqwerty"
-        ║  3. data-fake="true" 속성을 제거하면 실제 제출됩니다.
+        ║  CALENDLY 임베드 안내:
+        ║  1. https://calendly.com 가입 후 이벤트 생성 (예: "스튜디오 방문 30분")
+        ║  2. Share → Embed → Inline embed 코드 복사
+        ║  3. 아래 .embed-frame 안의 placeholder 부분을 복사한 코드로 교체
+        ║  4. 또는 네이버 예약, Google Calendar Appointments 로 대체 가능
         ╚══════════════════════════════════════════════════════════════════════
       -->
+      <div class="embed-frame reveal" id="calendly-embed">
+        <div style="padding:3rem 1rem; text-align:center; color:var(--text-muted);">
+          <p style="font-family:var(--font-display); font-style:italic; font-size:1.4rem; margin-bottom:1rem; color:var(--text);">
+            <em>Calendly Embed Area</em>
+          </p>
+          <p style="font-size:0.88rem; line-height:1.8;">
+            여기에 Calendly inline 임베드 코드를 붙여넣으세요.<br/>
+            네이버 예약 위젯이나 Google Calendar 약속 시간으로도 대체 가능합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <div class="section-head">
+        <span class="eyebrow reveal">Or, send a quick message</span>
+        <h2 class="h-section reveal" style="font-size:clamp(1.4rem, 2.4vw, 2rem);"><em>Drop us a line</em></h2>
+        <p class="body-kr reveal" style="max-width:42ch; margin:1rem auto 0;">
+          간단한 안부나 질문은 아래 폼으로 ㅡ 1영업일 내에 답장 드립니다.
+        </p>
+      </div>
+
       <form
         class="form-wrap"
         data-form
@@ -69,75 +135,28 @@
       >
         <div class="field-row">
           <div class="field reveal">
-            <label for="name">Name <span class="req">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="홍길동" />
+            <label for="c-name">Name <span class="req">*</span></label>
+            <input type="text" id="c-name" name="name" required placeholder="성함" />
           </div>
           <div class="field reveal">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" />
+            <label for="c-contact">Phone or Email <span class="req">*</span></label>
+            <input type="text" id="c-contact" name="contact" required placeholder="휴대폰 번호 또는 이메일" />
           </div>
         </div>
 
         <div class="field reveal">
-          <label for="email">Email <span class="req">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <label for="c-msg">Message <span class="req">*</span></label>
+          <textarea id="c-msg" name="message" required placeholder="자유롭게 적어주세요."></textarea>
         </div>
 
-        <div class="field-row">
-          <div class="field reveal">
-            <label for="type">Project Type</label>
-            <select id="type" name="project_type">
-              <option value="">선택해 주세요</option>
-              <option value="salon">Salon — 미용실</option>
-              <option value="clinic">Clinic — 병원/의원</option>
-              <option value="cafe">Café &amp; Retail — 카페/상업 공간</option>
-              <option value="office">Office — 오피스</option>
-              <option value="residential">Home — 주거 공간</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="field reveal">
-            <label for="budget">Budget</label>
-            <select id="budget" name="budget">
-              <option value="">선택해 주세요</option>
-              <option value="under-50">~ 5천만원</option>
-              <option value="50-100">5천만 ~ 1억</option>
-              <option value="100-300">1억 ~ 3억</option>
-              <option value="300-500">3억 ~ 5억</option>
-              <option value="over-500">5억 이상</option>
-              <option value="undecided">미정</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field reveal">
-          <label for="message">Message <span class="req">*</span></label>
-          <textarea id="message" name="message" required placeholder="공간의 위치, 규모, 일정, 원하시는 방향성 등을 자유롭게 적어주세요."></textarea>
-        </div>
+        <p style="text-align:center; font-size:0.78rem; color:var(--text-soft); margin-bottom:1.4rem;">
+          상세한 견적 문의는 <a href="reservation.html" style="color:var(--text); text-decoration:underline;">상담 신청 양식</a>을 이용해 주세요.
+        </p>
 
         <div class="field reveal" style="text-align:center;">
-          <button type="submit" class="submit-btn">Send Inquiry</button>
+          <button type="submit" class="submit-btn">Send</button>
         </div>
       </form>
-
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <div class="contact-info-item reveal">
-          <div class="label">Phone</div>
-          <div class="value"><em>02 . 0000 . 0000</em></div>
-          <div class="value-sub">평일 10:00 — 18:00</div>
-        </div>
-        <div class="contact-info-item reveal">
-          <div class="label">Email</div>
-          <div class="value"><em>hello@example.com</em></div>
-          <div class="value-sub">24시간 내 회신</div>
-        </div>
-        <div class="contact-info-item reveal">
-          <div class="label">Visit</div>
-          <div class="value"><em>Seoul, KR</em></div>
-          <div class="value-sub">서울시 성북구 보문로29길<br/>방문은 사전 예약</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -145,10 +164,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand"><span class="brand"><em>jm mondo</em></span><p class="tagline">Interior design studio in Seoul.</p><div class="footer-social"><a href="#"><em>B</em></a><a href="#"><em>Y</em></a><a href="#"><em>IG</em></a></div></div>
+        <div class="footer-col"><h4>Sitemap</h4><ul><li><a href="about.html">About</a></li><li><a href="business.html">Business</a></li><li><a href="project.html">Project</a></li><li><a href="contact.html">Contact</a></li><li><a href="reservation.html">Reservation</a></li></ul></div>
         <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0212345678">02 . 0000 . 0000</a></li><li><a href="mailto:hello@example.com">hello@example.com</a></li><li><span>Seoul, South Korea</span></li></ul></div>
       </div>
       <div class="footer-meta">
-        <div class="biz"><span>사업자 | 제이엠몬도</span><span>대표 | 000</span><span>실내건축면허 보유</span></div>
+        <div class="biz"><span>사업자 | 제이엠몬도</span><span>대표 | 000</span></div>
         <div>© 2026 JM Mondo. All rights reserved.</div>
       </div>
     </div>

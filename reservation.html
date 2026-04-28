@@ -4,11 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reservation — 제이엠몬도 (JM Mondo)</title>
-  <meta name="description" content="제이엠몬도 사무실 방문 상담 예약." />
+  <meta name="description" content="제이엠몬도 인테리어 상담 신청 — 공간 정보, 예산, 일정을 알려주세요." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* 상담 양식 전용 스타일 */
+    .check-group { display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; padding:0.4rem 0; }
+    .check-group label {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      font-family: var(--font-body); font-size:0.92rem; color:var(--text);
+      letter-spacing:0; text-transform:none; font-weight:300;
+      cursor:pointer; padding:0.4rem 0; margin:0;
+    }
+    .check-group input[type="radio"],
+    .check-group input[type="checkbox"] {
+      width:16px; height:16px; accent-color:var(--text);
+      cursor:pointer; margin:0;
+    }
+    .form-section-title {
+      font-family: var(--font-display); font-style:italic;
+      font-size:1.2rem; color:var(--text);
+      margin:2.4rem 0 0.4rem; padding-top:1.6rem;
+      border-top:1px solid var(--line-soft);
+    }
+    .form-section-title:first-child { border-top:none; padding-top:0; margin-top:0; }
+    .form-helper { font-size:0.78rem; color:var(--text-soft); margin-top:0.4rem; line-height:1.6; }
+  </style>
 </head>
 <body>
 
@@ -18,6 +42,7 @@
       <nav>
         <ul class="nav-list">
           <li><a href="about.html">ABOUT</a><ul class="submenu"><li><a href="about.html#company">COMPANY</a></li><li><a href="about.html#ceo-message">CEO MESSAGE</a></li><li><a href="about.html#promise">PROMISE</a></li></ul></li>
+          <li><a href="business.html">BUSINESS</a><ul class="submenu"><li><a href="business.html#interior">INTERIOR</a></li><li><a href="business.html#construction">CONSTRUCTION</a></li></ul></li>
           <li><a href="project.html">PROJECT</a></li>
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="reservation.html">RESERVATION</a></li>
@@ -44,111 +69,144 @@
   <section class="page-hero">
     <div class="container-narrow">
       <span class="eyebrow reveal">Reservation</span>
-      <h1 class="h-display reveal">Book a Visit</h1>
-      <p class="body-en reveal"><em>Reserve a time to visit our studio in Seoul.</em></p>
+      <h1 class="h-display reveal">Consultation Request</h1>
+      <p class="body-en reveal"><em>Tell us about your space — we'll get back within one business day.</em></p>
     </div>
   </section>
 
   <section>
     <div class="container-narrow">
-      <div class="section-head">
-        <span class="eyebrow reveal">방문 예약 안내</span>
-        <h2 class="h-section reveal"><em>Studio Visit</em></h2>
-        <p class="body-kr reveal" style="max-width:48ch; margin:1rem auto 0;">
-          공간에 대한 자세한 상담은 사무실 방문을 권해드립니다. 평면도, 머티리얼 보드, 과거 작업 사진을 함께 보며 ㅡ 방향을 그려봅니다.
-        </p>
-      </div>
+      <p class="body-kr reveal" style="text-align:center; max-width:54ch; margin:0 auto 3rem;">
+        아래 항목을 채워 주시면, 더 정확한 방향과 예상 견적을 준비해서 회신드립니다. 모든 항목이 필수는 아니지만, 알려주실수록 보다 적합한 답변을 드릴 수 있습니다.
+      </p>
 
-      <!--
-        ╔══════════════════════════════════════════════════════════════════════
-        ║  CALENDLY 임베드 (선택):
-        ║  1. https://calendly.com 가입 후 이벤트 생성
-        ║  2. Share → Embed → Inline embed 코드 복사
-        ║  3. 아래 .embed-frame 안에 붙여넣기
-        ║  4. 또는 네이버 예약, 구글 캘린더 약속 등으로 대체 가능
-        ╚══════════════════════════════════════════════════════════════════════
-      -->
-      <div class="embed-frame reveal" id="calendly-embed">
-        <!-- Calendly inline widget -->
-        <div style="padding:3rem 1rem; text-align:center; color:var(--text-muted);">
-          <p style="font-family:var(--font-display); font-style:italic; font-size:1.4rem; margin-bottom:1rem; color:var(--text);">
-            <em>Calendly Embed Area</em>
-          </p>
-          <p style="font-size:0.88rem; line-height:1.8;">
-            여기에 Calendly inline embed 코드를 삽입하시거나,<br/>
-            네이버 예약 위젯, Google Calendar Appointment 링크로 교체할 수 있습니다.
-          </p>
-          <p style="margin-top:1.4rem; font-size:0.78rem; letter-spacing:0.2em; color:var(--text-soft);">
-            ─ HTML 주석 가이드 참조 ─
-          </p>
-        </div>
-        <!--
-          Calendly 예시 코드:
-          <div class="calendly-inline-widget"
-               data-url="https://calendly.com/your-account/30min"
-               style="min-width:320px;height:700px;"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        -->
-      </div>
+      <form
+        class="form-wrap"
+        data-form
+        data-fake="true"
+        method="POST"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        style="max-width:720px;"
+      >
+        <!-- ────────── 신청자 정보 ────────── -->
+        <h3 class="form-section-title reveal"><em>1. 신청자 정보</em></h3>
 
-      <!-- Backup form -->
-      <div style="margin-top:5rem;">
-        <div class="section-head">
-          <span class="eyebrow reveal">Or, send a request</span>
-          <h2 class="h-section reveal" style="font-size:clamp(1.4rem, 2.4vw, 2rem);"><em>Reservation by message</em></h2>
+        <div class="field-row">
+          <div class="field reveal">
+            <label for="r-name">성함 <span class="req">*</span></label>
+            <input type="text" id="r-name" name="name" required />
+          </div>
+          <div class="field reveal">
+            <label for="r-phone">휴대폰 번호 <span class="req">*</span></label>
+            <input type="tel" id="r-phone" name="phone" required placeholder="010-0000-0000" />
+          </div>
         </div>
 
-        <form
-          class="form-wrap"
-          data-form
-          data-fake="true"
-          method="POST"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-        >
-          <div class="field-row">
-            <div class="field reveal">
-              <label for="r-name">Name <span class="req">*</span></label>
-              <input type="text" id="r-name" name="name" required />
-            </div>
-            <div class="field reveal">
-              <label for="r-phone">Phone <span class="req">*</span></label>
-              <input type="tel" id="r-phone" name="phone" required />
-            </div>
-          </div>
-
+        <div class="field-row">
           <div class="field reveal">
-            <label for="r-email">Email</label>
-            <input type="email" id="r-email" name="email" />
+            <label for="r-email">이메일</label>
+            <input type="email" id="r-email" name="email" placeholder="you@example.com" />
           </div>
-
-          <div class="field-row">
-            <div class="field reveal">
-              <label for="r-date">Preferred Date <span class="req">*</span></label>
-              <input type="date" id="r-date" name="date" required />
-            </div>
-            <div class="field reveal">
-              <label for="r-time">Preferred Time</label>
-              <select id="r-time" name="time">
-                <option value="10:00">10:00 AM</option>
-                <option value="11:00">11:00 AM</option>
-                <option value="14:00">2:00 PM</option>
-                <option value="15:00">3:00 PM</option>
-                <option value="16:00">4:00 PM</option>
-                <option value="17:00">5:00 PM</option>
-              </select>
-            </div>
-          </div>
-
           <div class="field reveal">
-            <label for="r-msg">Notes</label>
-            <textarea id="r-msg" name="notes" placeholder="문의 내용을 간단히 적어주시면 미리 준비합니다."></textarea>
+            <label for="r-time">통화 가능 시간</label>
+            <input type="text" id="r-time" name="contact_time" placeholder="예) 평일 오후 2~6시" />
           </div>
+        </div>
 
-          <div class="field reveal" style="text-align:center;">
-            <button type="submit" class="submit-btn">Request Visit</button>
+        <div class="field reveal">
+          <label>유입 경로</label>
+          <div class="check-group">
+            <label><input type="radio" name="referral" value="instagram" /> 인스타그램</label>
+            <label><input type="radio" name="referral" value="youtube" /> 유튜브</label>
+            <label><input type="radio" name="referral" value="naver" /> 네이버 검색</label>
+            <label><input type="radio" name="referral" value="blog" /> 블로그</label>
+            <label><input type="radio" name="referral" value="referral" /> 지인 소개</label>
+            <label><input type="radio" name="referral" value="other" /> 기타</label>
           </div>
-        </form>
-      </div>
+        </div>
+
+        <!-- ────────── 공간 정보 ────────── -->
+        <h3 class="form-section-title reveal"><em>2. 공간 정보</em></h3>
+
+        <div class="field reveal">
+          <label>공간 용도 <span class="req">*</span></label>
+          <div class="check-group">
+            <label><input type="radio" name="space_type" value="salon" required /> 미용실</label>
+            <label><input type="radio" name="space_type" value="clinic" /> 병원・의원</label>
+            <label><input type="radio" name="space_type" value="cafe" /> 카페・매장</label>
+            <label><input type="radio" name="space_type" value="office" /> 오피스</label>
+            <label><input type="radio" name="space_type" value="home" /> 주거 공간</label>
+            <label><input type="radio" name="space_type" value="other" /> 기타</label>
+          </div>
+        </div>
+
+        <div class="field reveal">
+          <label for="r-location">현장 주소 <span class="req">*</span></label>
+          <input type="text" id="r-location" name="location" required placeholder="예) 서울시 ○○구 ○○동" />
+          <p class="form-helper">정확한 주소를 알려주시면 현장 답사 일정을 잡기 수월합니다.</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field reveal">
+            <label for="r-size">공간 규모 (평수)</label>
+            <input type="text" id="r-size" name="size" placeholder="예) 30평" />
+          </div>
+          <div class="field reveal">
+            <label for="r-status">현재 상태</label>
+            <select id="r-status" name="status">
+              <option value="">선택</option>
+              <option value="new">신축 (인테리어 처음)</option>
+              <option value="renovation">전체 리모델링</option>
+              <option value="partial">부분 리모델링</option>
+              <option value="undecided">미정</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- ────────── 일정 & 예산 ────────── -->
+        <h3 class="form-section-title reveal"><em>3. 일정 &amp; 예산</em></h3>
+
+        <div class="field-row">
+          <div class="field reveal">
+            <label for="r-start">착공 희망 시기</label>
+            <input type="text" id="r-start" name="start_date" placeholder="예) 2026년 6월" />
+          </div>
+          <div class="field reveal">
+            <label for="r-end">완공 희망 시기</label>
+            <input type="text" id="r-end" name="end_date" placeholder="예) 2026년 9월" />
+          </div>
+        </div>
+
+        <div class="field reveal">
+          <label for="r-budget">예산 범위</label>
+          <select id="r-budget" name="budget">
+            <option value="">선택해 주세요</option>
+            <option value="under-30">3천만원 이하</option>
+            <option value="30-50">3천 — 5천만원</option>
+            <option value="50-100">5천만 — 1억</option>
+            <option value="100-200">1억 — 2억</option>
+            <option value="over-200">2억 이상</option>
+            <option value="undecided">미정 / 상담 후 결정</option>
+          </select>
+          <p class="form-helper">대략적인 범위만 알려주셔도 됩니다. 부분 시공이나 소액 예산건은 진행이 어려울 수 있는 점 양해 부탁드립니다.</p>
+        </div>
+
+        <!-- ────────── 요청사항 ────────── -->
+        <h3 class="form-section-title reveal"><em>4. 요청사항</em></h3>
+
+        <div class="field reveal">
+          <label for="r-message">자세한 내용</label>
+          <textarea id="r-message" name="message" placeholder="원하시는 분위기, 운영 방식, 참고 이미지 등 자유롭게 적어주세요." style="min-height:160px;"></textarea>
+          <p class="form-helper">평면도나 참고 이미지가 있으시면 회신 메일에 첨부해 주시거나, hello@example.com 으로 별도 전송 부탁드립니다.</p>
+        </div>
+
+        <div class="field reveal" style="text-align:center; margin-top:2.4rem;">
+          <button type="submit" class="submit-btn">상담 신청</button>
+          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:1rem;">
+            * 신청 후 <strong style="color:var(--text); font-weight:400;">1영업일 이내</strong>에 회신드립니다.
+          </p>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -156,10 +214,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand"><span class="brand"><em>jm mondo</em></span><p class="tagline">Interior design studio in Seoul.</p><div class="footer-social"><a href="#"><em>B</em></a><a href="#"><em>Y</em></a><a href="#"><em>IG</em></a></div></div>
+        <div class="footer-col"><h4>Sitemap</h4><ul><li><a href="about.html">About</a></li><li><a href="business.html">Business</a></li><li><a href="project.html">Project</a></li><li><a href="contact.html">Contact</a></li><li><a href="reservation.html">Reservation</a></li></ul></div>
         <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0212345678">02 . 0000 . 0000</a></li><li><a href="mailto:hello@example.com">hello@example.com</a></li><li><span>Seoul, South Korea</span></li></ul></div>
       </div>
       <div class="footer-meta">
-        <div class="biz"><span>사업자 | 제이엠몬도</span><span>대표 | 000</span><span>실내건축면허 보유</span></div>
+        <div class="biz"><span>사업자 | 제이엠몬도</span><span>대표 | 000</span></div>
         <div>© 2026 JM Mondo. All rights reserved.</div>
       </div>
     </div>
